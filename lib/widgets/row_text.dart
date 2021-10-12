@@ -24,9 +24,9 @@ class RowIconText extends StatelessWidget {
       ),
       Text(title,
           style: const TextStyle(
-              color: Color(0xffffffff),
+              color: Color(0xFFACAAAA),
               fontSize: 13,
-              fontWeight: FontWeight.w300))
+              fontWeight: FontWeight.w400))
     ]);
   }
 }

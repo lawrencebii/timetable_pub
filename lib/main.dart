@@ -1,9 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:timetable/Views/homepage.dart';
-import 'package:timetable/utilities/dims.dart';
 
 void main() {
   runApp(MyApp());

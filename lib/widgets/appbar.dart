@@ -18,6 +18,7 @@ class BarApp extends StatelessWidget {
         )),
         const CircleAvatar(
           child: Text('B'),
+          backgroundColor: Color(0xff4fa48d),
         )
       ],
     );

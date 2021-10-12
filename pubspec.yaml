@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_screenutil: ^5.0.0+2
   percent_indicator: ^3.4.0
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
