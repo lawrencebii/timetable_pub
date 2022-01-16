@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:timetable/Views/alerts.dart';
 import 'package:timetable/Views/classes.dart';
-import 'package:timetable/Views/example_classe.dart';
+import 'package:timetable/Views/classes_page.dart';
 import 'package:timetable/Views/homework.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,15 +14,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
+  static  List<Widget> _widgetOptions = <Widget>[
     // TheClasses(),
     MockClasses(),
     HomeworkPage(),
 
     AlertPage(),
-    Text(
-      'Index 2: School',
-    ),
+
+
+      Center(
+        child: Text('Coming soon..',style: GoogleFonts.audiowide(
+            color: Colors.white,
+            fontSize: 24
+        ),),
+      ),
+
   ];
 
   void _onItemTapped(int index) {

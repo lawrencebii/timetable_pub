@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:timetable/utilities/dims.dart';
 import 'package:timetable/widgets/appbar.dart';
 import 'package:timetable/widgets/homework_body.dart';
@@ -40,6 +41,13 @@ class _HomeworkPageState extends State<HomeworkPage> {
               homeTitle: 'Fluid Mechanics I',
               homeworkDay: "Friday",
             ),
+            SizedBox(height: 50,),
+            Center(
+              child: Text('Coming soon..',style: GoogleFonts.audiowide(
+                  color: Colors.white,
+                  fontSize: 24
+              ),),
+            )
           ],
         ),
       ),

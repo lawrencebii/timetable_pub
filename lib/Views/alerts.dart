@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:timetable/utilities/dims.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:timetable/widgets/alert_body.dart';
-import 'package:timetable/widgets/appbar.dart';
+
 
 class AlertPage extends StatefulWidget {
   const AlertPage({Key? key}) : super(key: key);
@@ -32,9 +32,16 @@ class _AlertPageState extends State<AlertPage> {
       body: ListView(
         children: [
           const AlertBody(
-              alertTitle: 'Math Test',
+              alertTitle: 'TOS CAT',
               alertVenue: 'Sp Annex',
-              alertDay: '28th Oct')
+              alertDay: '28th Oct 1899'),
+          SizedBox(height: 50,),
+          Center(
+            child: Text('Coming soon..',style: GoogleFonts.audiowide(
+              color: Colors.white,
+              fontSize: 24
+            ),),
+          )
         ],
       ),
     );
