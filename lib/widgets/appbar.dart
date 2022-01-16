@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 class BarApp extends StatelessWidget {
   const BarApp({
     Key? key,
@@ -10,7 +12,15 @@ class BarApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(title),
+        Text(
+          title,
+          style: GoogleFonts.monoton(
+            textStyle: const TextStyle(
+                color: Color(0xFFFFFFFF),
+                fontSize: 18,
+                letterSpacing: .5),
+          ),
+        ),
         const Expanded(
             child: SizedBox(
           height: 10,

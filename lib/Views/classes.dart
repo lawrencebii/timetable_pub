@@ -1,8 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, curly_braces_in_flow_control_structures
 
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:timetable/Logic/week_sort.dart';
 import 'package:timetable/Models/class_model.dart';
 import 'package:timetable/Models/class_response_model.dart';
 import 'package:timetable/utilities/api_helper.dart';
@@ -11,6 +13,7 @@ import 'package:timetable/widgets/appbar.dart';
 import 'package:timetable/widgets/classes_body.dart';
 import 'package:timetable/widgets/row_text.dart';
 import 'package:http/http.dart' as http;
+import 'package:timetable/widgets/week_days.dart';
 
 class TheClasses extends StatefulWidget {
   const TheClasses({Key? key}) : super(key: key);
@@ -21,33 +24,27 @@ class TheClasses extends StatefulWidget {
 
 class _TheClassesState extends State<TheClasses> {
   late Future<ClassResponseModel> units;
-  Future<ClassResponseModel> fetchUnits() async {
-    final response = await http.get(Uri.parse(
-        'https://southrift.jkuatcatcom.org/public/api/timetable'));
 
-    if (response.statusCode == 200) {
-      print('Fetched');
+  SortClasses _sort = SortClasses();
+  ApiHelper _helper = ApiHelper();
+  String text = DateFormat('EEEE').format(DateTime.now());
 
-      return ClassResponseModel.fromJson(jsonDecode(response.body));
-    } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
-      throw Exception('Failed to load album');
-    }
-  }
+  get value => null;
 
   @override
   void initState() {
+    // _sort.addDay(text);
     super.initState();
-    units = fetchUnits();
+    units = _helper.fetchUnits();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
 
+    return Scaffold(
         backgroundColor: const Color(0xFF0F0F0F),
         appBar: AppBar(
+          elevation: .1,
           backgroundColor: const Color(0xFF000000),
           title: const BarApp(title: 'Classes'),
         ),
@@ -59,32 +56,35 @@ class _TheClassesState extends State<TheClasses> {
                 padding: const EdgeInsets.all(2.0),
                 child: ListView(
                   children: [
-                    for (var item in snapshot.data!.timetable)
-                      ClassBody(
-                        unit: item.subject,
-                        startTime: item.start.split(':').first +
-                            ':' +
-                            item.start.split(':')[1],
-                        lecturer: item.lecturer,
-                        venue: item.venue,
-                        day: item.day,
-                      )
+                    // AppBar(
+                    //   backgroundColor:
+                    //       const Color(0xFF000000),
+                    //   title: const BarApp(title: 'Classes'),
+                    // ),
+                    WeekDays(
+
+                      selectedDay: text,
+                      classes: snapshot.data!.timetable,
+                    ),
+
                   ],
                 ),
               );
-            }
-
-            else if (snapshot.hasError) {
-              return Text('Oops!!\nPlease check your internet connectivity and try again',style: TextStyle(color: Color(
-                  0xff9a4b38),fontSize: 25,fontStyle: FontStyle.italic),);
+            } else if (snapshot.hasError) {
+              return Text(
+                'Oops!!\nPlease check your internet connectivity and try again',
+                style: TextStyle(
+                    color: Color(0xff9a4b38),
+                    fontSize: 25,
+                    fontStyle: FontStyle.italic),
+              );
             }
             return Center(
               child: SizedBox(
-                height: 100,
+                height: 50,
                 width: 100,
                 child: const CircularProgressIndicator(
-
-                  color: Color(0xff348723),
+                  color: Color(0xFF26501E),
                   strokeWidth: 6,
                 ),
               ),

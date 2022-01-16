@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timetable/Views/alerts.dart';
 import 'package:timetable/Views/classes.dart';
+import 'package:timetable/Views/example_classe.dart';
 import 'package:timetable/Views/homework.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +14,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    TheClasses(),
+    // TheClasses(),
+    MockClasses(),
     HomeworkPage(),
 
     AlertPage(),
@@ -38,6 +40,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0.0,
         items: const <BottomNavigationBarItem>[
+          
           BottomNavigationBarItem(
             icon: Icon(Icons.auto_stories),
             label: 'Classes',

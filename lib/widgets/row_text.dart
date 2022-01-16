@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:timetable/utilities/dims.dart';
 
 class RowIconText extends StatelessWidget {
@@ -23,10 +24,9 @@ class RowIconText extends StatelessWidget {
         ),
       ),
       Text(title,
-          style: const TextStyle(
-              color: Color(0xFFACAAAA),
-              fontSize: 13,
-              fontWeight: FontWeight.w400))
+              style: GoogleFonts.shadowsIntoLight(
+    textStyle: const TextStyle(color:  Color(0xFFACAAAA),fontSize: 13, letterSpacing: .5),
+  ),)
     ]);
   }
 }
