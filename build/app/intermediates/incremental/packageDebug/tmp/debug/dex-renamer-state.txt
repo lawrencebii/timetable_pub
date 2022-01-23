@@ -1,4 +1,4 @@
-#Sun Jan 16 12:46:16 EAT 2022
-base.0=C\:\\Users\\HP\\AndroidStudioProjects\\timatable\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Sun Jan 16 20:47:47 EAT 2022
+base.0=C\:\\Users\\HP\\Desktop\\AndroidStudioProjects\\timetable\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
